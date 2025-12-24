@@ -203,10 +203,10 @@ def generate_formula_text(df_components, depth, g, var_t, var_x, var_z):
     buffer.write("水平速度u_finite_depth = \n")
     for i in range(n_components):
         row = df_components.iloc[i]
-        a = row['Amplitude(m)']
-        w = row['Frequency(rad/s)']
-        k = row['Wavenumber(rad/m)']
-        e = row['Phase(rad)']
+        a = row['Amplitude']
+        w = row['angularFrequency']
+        k = row['Wavenumber']
+        e = row['Phase']
 
         coeff = (g * a * k) / w
         # 修改点：使用 .20g 代替 .8f
@@ -223,10 +223,10 @@ def generate_formula_text(df_components, depth, g, var_t, var_x, var_z):
     buffer.write("垂直速度w_finite_depth = \n")
     for i in range(n_components):
         row = df_components.iloc[i]
-        a = row['Amplitude(m)']
-        w = row['Frequency(rad/s)']
-        k = row['Wavenumber(rad/m)']
-        e = row['Phase(rad)']
+        a = row['Amplitude']
+        w = row['angularFrequency']
+        k = row['Wavenumber']
+        e = row['Phase']
 
         coeff = (g * a * k) / w
         # 修改点：使用 .20g 代替 .8f
@@ -249,10 +249,10 @@ def generate_formula_text(df_components, depth, g, var_t, var_x, var_z):
     buffer.write("水平速度u_exp_approx = \n")
     for i in range(n_components):
         row = df_components.iloc[i]
-        a = row['Amplitude(m)']
-        w = row['Frequency(rad/s)']
-        k = row['Wavenumber(rad/m)']
-        e = row['Phase(rad)']
+        a = row['Amplitude']
+        w = row['angularFrequency']
+        k = row['Wavenumber']
+        e = row['Phase']
 
         coeff = (g * a * k) / w
         # 修改点：使用 .20g 代替 .8f
@@ -269,10 +269,10 @@ def generate_formula_text(df_components, depth, g, var_t, var_x, var_z):
     buffer.write("垂直速度w_exp_approx = \n")
     for i in range(n_components):
         row = df_components.iloc[i]
-        a = row['Amplitude(m)']
-        w = row['Frequency(rad/s)']
-        k = row['Wavenumber(rad/m)']
-        e = row['Phase(rad)']
+        a = row['Amplitude']
+        w = row['angularFrequency']
+        k = row['Wavenumber']
+        e = row['Phase']
 
         coeff = (g * a * k) / w
         # 修改点：使用 .20g 代替 .8f
@@ -406,10 +406,10 @@ if st.session_state.get('has_data'):
 
     # 数据准备
     df_components = pd.DataFrame({
-        'Frequency(rad/s)': res['omega'],
-        'Amplitude(m)': res['zeta_An'],
-        'Wavenumber(rad/m)': res['k'],
-        'Phase(rad)': res['eps']
+        'angularFrequency': res['omega'],
+        'Amplitude': res['zeta_An'],
+        'Wavenumber': res['k'],
+        'Phase': res['eps']
     })
 
     # 3. 下载区域
