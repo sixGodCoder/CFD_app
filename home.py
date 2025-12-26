@@ -22,7 +22,7 @@ with col1:
 with col2:
     # 垂直居中稍微有点难，Streamlit默认顶部对齐，
     # 我们可以直接显示标题，或者加一点 markdown 的空行让它视觉居中
-    st.title("海洋工程波浪仿真综合平台")
+    st.title("海洋工程波浪仿真综合平台1")
     st.caption("Marine Hydrodynamic Performance & Optimization Lab") # 既然Logo上有英文，这里配个英文副标题会更有质感
 
 st.markdown("---") # 加个分割线区分头部和正文
