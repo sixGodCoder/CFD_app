@@ -76,7 +76,7 @@ def process_data_pipeline(t_target, y_target, t_sim, y_sim,
     if end_time - start_time < window_duration:
         return None, "数据重叠时间太短，无法分析"
 
-    dt_common = 0.05
+    dt_common = 0.003
     t_common = np.arange(start_time, end_time, dt_common)
 
     # 3. 插值同步
@@ -240,7 +240,7 @@ if f_theo and f_sim:
             fig.add_trace(go.Scatter(
                 x=res['t_common'], y=res['y_sim_raw'],
                 name='原始仿真 (含漂移)',
-                line=dict(color='blue', width=1), opacity=0.3,
+                line=dict(color='blue', width=2), opacity=0.8,
                 visible='legendonly'  # 默认隐藏，点击图例可看
             ))
 
@@ -251,7 +251,7 @@ if f_theo and f_sim:
                 line=dict(color='#2ca02c', width=2)
             ))
 
-            # 3. 理论波 (橙虚线)
+            # 3. 理论波 (橙实线)
             fig.add_trace(go.Scatter(
                 x=res['t_common'], y=res['y_target'],
                 name='理论波 (Target)',
